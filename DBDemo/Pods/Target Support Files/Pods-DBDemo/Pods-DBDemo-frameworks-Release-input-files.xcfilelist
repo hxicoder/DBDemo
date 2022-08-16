@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-DBDemo/Pods-DBDemo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework
+${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework
