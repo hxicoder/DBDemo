@@ -48,73 +48,67 @@
     _queue = [FMDatabaseQueue databaseQueueWithPath:kDBPath];
     
     [_queue inDatabase:^(FMDatabase * _Nonnull db) {
-        BOOL isMsgTabelExist = [db tableExists:@"message"];
-        
         BOOL result = NO;
         
-        if (!isMsgTabelExist) {
-            NSString *sql = @"create table message (                    \
-                              _id INTEGER PRIMARY KEY AUTOINCREMENT,    \
-                              body TEXT);";
-                        
-            result = [db executeUpdate:sql];
-            
-            if (!result) {
-                [self insertLog:@"主表创建失败!!!"];
-                return;
-            }
-            
-            [self insertLog:@"主表创建成功!"];
+        NSString *sql = @"create table if not exists message (       \
+                          _id INTEGER PRIMARY KEY AUTOINCREMENT,    \
+                          body TEXT);";
+                    
+        result = [db executeUpdate:sql];
+        
+        if (!result) {
+            [self insertLog:@"创建主表执行失败!!!"];
+            return;
         }
-        
-        BOOL isVirtualTableExist = [db tableExists:@"virtual_message"];
-        
-        if (!isVirtualTableExist) {
-            NSString *sql = @"create virtual table virtual_message using fts5(       \
-                              body,                                                  \
-                              content='message',                                     \
-                              content_rowid='_id',                                   \
-                              tokenize = 'simple')";
-            BOOL result = [db executeUpdate:sql];
-            
-            if (result) {
-                [self insertLog:@"虚拟表创建成功!"];
-            } else {
-                [self insertLog:@"虚拟表创建失败!!!"];
                 
-                return;
-            }
+        sql = @"create virtual table if not exists virtual_message using fts5( \
+                body, \
+                content='message', \
+                content_rowid='_id', \
+                tokenize = 'simple')";
+        
+        result = [db executeUpdate:sql];
+        
+        if (!result) {
+            [self insertLog:@"创建虚拟表执行失败!!!"];
+            return;
         }
         
         FMResultSet *resultSet = [db executeQuery:@"SELECT name FROM sqlite_master WHERE type = 'trigger';"];
         
         if (![resultSet next]) {
-            NSString *sql = @"CREATE TRIGGER message_ai AFTER INSERT ON message BEGIN \
-                                INSERT INTO virtual_message(rowid, body) VALUES (new._id, new.body); \
-                              END; \
-                              CREATE TRIGGER message_ad AFTER DELETE ON message BEGIN \
-                                INSERT INTO virtual_message(virtual_message, rowid, body) VALUES('delete', old._id, old.body); \
-                              END;\
-                              CREATE TRIGGER message_au AFTER UPDATE ON message BEGIN \
-                                INSERT INTO virtual_message(virtual_message, rowid, body) VALUES('delete', old._id, old.body); \
-                                INSERT INTO virtual_message(rowid, body) VALUES (new._id, new.body); \
-                              END;";
+            NSString *message_ai = @"CREATE TRIGGER message_ai AFTER INSERT ON message BEGIN \
+                                        INSERT INTO virtual_message(rowid, body) VALUES (new._id, new.body); \
+                                     END; ";
+            NSString *message_ad = @"CREATE TRIGGER message_ad AFTER DELETE ON message BEGIN \
+                                        INSERT INTO virtual_message(virtual_message, rowid, body) VALUES('delete', old._id, old.body); \
+                                     END;";
+            NSString *message_au = @"CREATE TRIGGER message_au AFTER UPDATE ON message BEGIN \
+                                        INSERT INTO virtual_message(virtual_message, rowid, body) VALUES('delete', old._id, old.body); \
+                                        INSERT INTO virtual_message(rowid, body) VALUES (new._id, new.body); \
+                                     END;";
             
-            result = [db executeUpdate:sql];
-            
-            if (!result) {
+            if (![db executeUpdate:message_ai]) {
                 [self insertLog:@"TRIGGER 创建失败！!!"];
                 return;
-            } else {
-                [self insertLog:@"TRIGGER 创建成功！"];
+            }
+            
+            if (![db executeUpdate:message_ad]) {
+                [self insertLog:@"TRIGGER 创建失败！!!"];
+                return;
+            }
+            
+            if (![db executeUpdate:message_au]) {
+                [self insertLog:@"TRIGGER 创建失败！!!"];
+                return;
             }
         }
         
         NSString *jiebaPath = kJiebaPath;
-        NSString *sql = [NSString stringWithFormat:@"select jieba_dict('%@')", jiebaPath];
+        sql = [NSString stringWithFormat:@"select jieba_dict('%@')", jiebaPath];
         result = [db executeStatements:sql];
-        if (result) {
-            
+        if (!result) {
+            [self insertLog:@"jieba_dict()失败！!!"];
         }
     }];
 }
@@ -194,11 +188,28 @@
     }
     
     [_queue inDatabase:^(FMDatabase * _Nonnull db) {
-        NSString *sql = @"delete from message where body = '%@';";
-        sql = [NSString stringWithFormat:sql, self.textField.text];
+        NSMutableArray *idArray = [NSMutableArray array];
         
-        BOOL result = [db executeUpdate:sql];
+        NSString *sql = [NSString stringWithFormat:@"select _id from message where body = '%@';", self.textField.text];
+        FMResultSet *rs = [db executeQuery:sql];
         
+        while ([rs next]) {
+            NSString *rowId = [rs stringForColumn:@"_id"];
+            if (rowId.length > 0) {
+                [idArray addObject:rowId];
+            }
+        }
+        
+        BOOL result = NO;
+        
+        if (idArray.count > 0) {
+            NSString *idsString = [idArray componentsJoinedByString:@","];
+            
+            sql = @"delete from message where _id in (%@);";
+            sql = [NSString stringWithFormat:sql, idsString];
+            result = [db executeUpdate:sql];
+        }
+                
         if (result) {
             [self insertLog:@"删除成功！"];
         } else {
