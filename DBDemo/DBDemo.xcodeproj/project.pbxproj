@@ -31,6 +31,7 @@
 		421A4FCC693366679AAD6950 /* Pods_DBDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1CBC7D24C3F0AC2E8AF880 /* Pods_DBDemo.framework */; };
 		A19588EB528DAE88BB448B80 /* Pods_DBDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980A5C67B0D5579AF0D731F6 /* Pods_DBDemoTests.framework */; };
 		CE2ED1EC07B5CFDBF1110372 /* Pods_DBDemo_DBDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F2C3CB01D764E44713237A /* Pods_DBDemo_DBDemoUITests.framework */; };
+		DB7D4FCD28AE850F00FFC597 /* dict in Resources */ = {isa = PBXBuildFile; fileRef = DB7D4FCC28AE850F00FFC597 /* dict */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		97F2C3CB01D764E44713237A /* Pods_DBDemo_DBDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DBDemo_DBDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		980A5C67B0D5579AF0D731F6 /* Pods_DBDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DBDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCE4E132C5ECE3DEEAB5DBF4 /* Pods-DBDemo-DBDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBDemo-DBDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-DBDemo-DBDemoUITests/Pods-DBDemo-DBDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB7D4FCC28AE850F00FFC597 /* dict */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dict; sourceTree = "<group>"; };
 		ED6130DAA8548386982254AA /* Pods-DBDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBDemoTests.release.xcconfig"; path = "Target Support Files/Pods-DBDemoTests/Pods-DBDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		F97D83CBC25B442468743E39 /* Pods-DBDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBDemo.release.xcconfig"; path = "Target Support Files/Pods-DBDemo/Pods-DBDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 		2102C4A328ADFC0100FBFA5D /* dict */ = {
 			isa = PBXGroup;
 			children = (
+				DB7D4FCC28AE850F00FFC597 /* dict */,
 				2102C4A628ADFC3200FBFA5D /* hmm_model.utf8 */,
 				2102C4A528ADFC3200FBFA5D /* idf.utf8 */,
 				2102C4A728ADFC3200FBFA5D /* jieba.dict.utf8 */,
@@ -356,6 +359,7 @@
 				2102C4AD28ADFC3300FBFA5D /* stop_words.utf8 in Resources */,
 				215C039A28ABCAF600C248D5 /* Main.storyboard in Resources */,
 				2102C4B328ADFC3E00FBFA5D /* prob_trans.utf8 in Resources */,
+				DB7D4FCD28AE850F00FFC597 /* dict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
