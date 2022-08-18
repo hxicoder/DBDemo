@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2102C47728AD066A00FBFA5D /* libsimple.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2102C47628AD066A00FBFA5D /* libsimple.a */; };
+		2102C48428AD31E800FBFA5D /* char_state_tab.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C47B28AD31E800FBFA5D /* char_state_tab.utf8 */; };
+		2102C48528AD31E800FBFA5D /* user.dict.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C47C28AD31E800FBFA5D /* user.dict.utf8 */; };
+		2102C48628AD31E800FBFA5D /* hmm_model.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C47D28AD31E800FBFA5D /* hmm_model.utf8 */; };
+		2102C48728AD31E800FBFA5D /* prob_trans.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C47E28AD31E800FBFA5D /* prob_trans.utf8 */; };
+		2102C48828AD31E800FBFA5D /* jieba.dict.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C47F28AD31E800FBFA5D /* jieba.dict.utf8 */; };
+		2102C48928AD31E800FBFA5D /* stop_words.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C48028AD31E800FBFA5D /* stop_words.utf8 */; };
+		2102C48A28AD31E800FBFA5D /* prob_emit.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C48128AD31E800FBFA5D /* prob_emit.utf8 */; };
+		2102C48B28AD31E800FBFA5D /* idf.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C48228AD31E800FBFA5D /* idf.utf8 */; };
+		2102C48C28AD31E800FBFA5D /* prob_start.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C48328AD31E800FBFA5D /* prob_start.utf8 */; };
 		215C039128ABCAF600C248D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C039028ABCAF600C248D5 /* AppDelegate.m */; };
 		215C039428ABCAF600C248D5 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C039328ABCAF600C248D5 /* SceneDelegate.m */; };
 		215C039728ABCAF600C248D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C039628ABCAF600C248D5 /* ViewController.m */; };
@@ -17,9 +27,7 @@
 		215C03AC28ABCAF900C248D5 /* DBDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C03AB28ABCAF900C248D5 /* DBDemoTests.m */; };
 		215C03B628ABCAF900C248D5 /* DBDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C03B528ABCAF900C248D5 /* DBDemoUITests.m */; };
 		215C03B828ABCAF900C248D5 /* DBDemoUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C03B728ABCAF900C248D5 /* DBDemoUITestsLaunchTests.m */; };
-		215C03C928ABCB8400C248D5 /* libPINYIN_TEXT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 215C03C528ABCB8300C248D5 /* libPINYIN_TEXT.a */; };
 		215C03CA28ABCB8400C248D5 /* FTSService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 215C03C728ABCB8400C248D5 /* FTSService.mm */; };
-		215C03CB28ABCB8400C248D5 /* libsimple.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 215C03C828ABCB8400C248D5 /* libsimple.a */; };
 		421A4FCC693366679AAD6950 /* Pods_DBDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1CBC7D24C3F0AC2E8AF880 /* Pods_DBDemo.framework */; };
 		A19588EB528DAE88BB448B80 /* Pods_DBDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980A5C67B0D5579AF0D731F6 /* Pods_DBDemoTests.framework */; };
 		CE2ED1EC07B5CFDBF1110372 /* Pods_DBDemo_DBDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F2C3CB01D764E44713237A /* Pods_DBDemo_DBDemoUITests.framework */; };
@@ -43,6 +51,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2102C47628AD066A00FBFA5D /* libsimple.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsimple.a; sourceTree = "<group>"; };
+		2102C47B28AD31E800FBFA5D /* char_state_tab.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = char_state_tab.utf8; sourceTree = "<group>"; };
+		2102C47C28AD31E800FBFA5D /* user.dict.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user.dict.utf8; sourceTree = "<group>"; };
+		2102C47D28AD31E800FBFA5D /* hmm_model.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hmm_model.utf8; sourceTree = "<group>"; };
+		2102C47E28AD31E800FBFA5D /* prob_trans.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prob_trans.utf8; sourceTree = "<group>"; };
+		2102C47F28AD31E800FBFA5D /* jieba.dict.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jieba.dict.utf8; sourceTree = "<group>"; };
+		2102C48028AD31E800FBFA5D /* stop_words.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stop_words.utf8; sourceTree = "<group>"; };
+		2102C48128AD31E800FBFA5D /* prob_emit.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prob_emit.utf8; sourceTree = "<group>"; };
+		2102C48228AD31E800FBFA5D /* idf.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = idf.utf8; sourceTree = "<group>"; };
+		2102C48328AD31E800FBFA5D /* prob_start.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prob_start.utf8; sourceTree = "<group>"; };
 		215C038C28ABCAF600C248D5 /* DBDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DBDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		215C038F28ABCAF600C248D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		215C039028ABCAF600C248D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -60,10 +78,8 @@
 		215C03B128ABCAF900C248D5 /* DBDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DBDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		215C03B528ABCAF900C248D5 /* DBDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBDemoUITests.m; sourceTree = "<group>"; };
 		215C03B728ABCAF900C248D5 /* DBDemoUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBDemoUITestsLaunchTests.m; sourceTree = "<group>"; };
-		215C03C528ABCB8300C248D5 /* libPINYIN_TEXT.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPINYIN_TEXT.a; sourceTree = "<group>"; };
 		215C03C628ABCB8400C248D5 /* FTSService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSService.h; sourceTree = "<group>"; };
 		215C03C728ABCB8400C248D5 /* FTSService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FTSService.mm; sourceTree = "<group>"; };
-		215C03C828ABCB8400C248D5 /* libsimple.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsimple.a; sourceTree = "<group>"; };
 		24E1E2882D79CB8B1E09564B /* Pods-DBDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-DBDemoTests/Pods-DBDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E1CBC7D24C3F0AC2E8AF880 /* Pods_DBDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DBDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A661822705B97D33A14DF6 /* Pods-DBDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBDemo.debug.xcconfig"; path = "Target Support Files/Pods-DBDemo/Pods-DBDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,8 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				421A4FCC693366679AAD6950 /* Pods_DBDemo.framework in Frameworks */,
-				215C03CB28ABCB8400C248D5 /* libsimple.a in Frameworks */,
-				215C03C928ABCB8400C248D5 /* libPINYIN_TEXT.a in Frameworks */,
+				2102C47728AD066A00FBFA5D /* libsimple.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,10 +181,18 @@
 		215C03C428ABCB6900C248D5 /* FTS */ = {
 			isa = PBXGroup;
 			children = (
+				2102C47B28AD31E800FBFA5D /* char_state_tab.utf8 */,
+				2102C47D28AD31E800FBFA5D /* hmm_model.utf8 */,
+				2102C48228AD31E800FBFA5D /* idf.utf8 */,
+				2102C47F28AD31E800FBFA5D /* jieba.dict.utf8 */,
+				2102C48128AD31E800FBFA5D /* prob_emit.utf8 */,
+				2102C48328AD31E800FBFA5D /* prob_start.utf8 */,
+				2102C47E28AD31E800FBFA5D /* prob_trans.utf8 */,
+				2102C48028AD31E800FBFA5D /* stop_words.utf8 */,
+				2102C47C28AD31E800FBFA5D /* user.dict.utf8 */,
+				2102C47628AD066A00FBFA5D /* libsimple.a */,
 				215C03C628ABCB8400C248D5 /* FTSService.h */,
 				215C03C728ABCB8400C248D5 /* FTSService.mm */,
-				215C03C528ABCB8300C248D5 /* libPINYIN_TEXT.a */,
-				215C03C828ABCB8400C248D5 /* libsimple.a */,
 			);
 			path = FTS;
 			sourceTree = "<group>";
@@ -305,9 +328,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2102C48C28AD31E800FBFA5D /* prob_start.utf8 in Resources */,
+				2102C48B28AD31E800FBFA5D /* idf.utf8 in Resources */,
+				2102C48428AD31E800FBFA5D /* char_state_tab.utf8 in Resources */,
+				2102C48828AD31E800FBFA5D /* jieba.dict.utf8 in Resources */,
+				2102C48928AD31E800FBFA5D /* stop_words.utf8 in Resources */,
 				215C039F28ABCAF900C248D5 /* LaunchScreen.storyboard in Resources */,
 				215C039C28ABCAF900C248D5 /* Assets.xcassets in Resources */,
 				215C039A28ABCAF600C248D5 /* Main.storyboard in Resources */,
+				2102C48A28AD31E800FBFA5D /* prob_emit.utf8 in Resources */,
+				2102C48728AD31E800FBFA5D /* prob_trans.utf8 in Resources */,
+				2102C48528AD31E800FBFA5D /* user.dict.utf8 in Resources */,
+				2102C48628AD31E800FBFA5D /* hmm_model.utf8 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,7 +662,7 @@
 					"$(PROJECT_DIR)/DBDemo/FTS",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hx.DBDemo.DBDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hx.DBDemo.DBDemoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -662,7 +694,7 @@
 					"$(PROJECT_DIR)/DBDemo/FTS",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hx.DBDemo.DBDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hx.DBDemo.DBDemoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
