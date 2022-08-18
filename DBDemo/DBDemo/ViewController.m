@@ -150,7 +150,7 @@
         NSMutableString *sql = [NSMutableString string];
         
         if (self.highlightSwitch.isOn) {
-            [sql appendString:@"select simple_highlight(virtual_message, 1, '[', ']') as body from virtual_message where body match "];
+            [sql appendString:@"select simple_highlight(virtual_message, 0, '[', ']') as body from virtual_message where body match "];
         } else {
             [sql appendString:@"select body from virtual_message where body match "];
         }
