@@ -109,6 +109,13 @@
                 [self insertLog:@"TRIGGER 创建成功！"];
             }
         }
+        
+        NSString *jiebaPath = kJiebaPath;
+        NSString *sql = [NSString stringWithFormat:@"select jieba_dict('%@')", jiebaPath];
+        result = [db executeStatements:sql];
+        if (result) {
+            
+        }
     }];
 }
 
@@ -150,13 +157,6 @@
         
         if (self.jiebaSwitch.isOn) {
             [sql appendFormat:@"jieba_query('%@');", text];
-            
-            NSString *jiebaPath = kJiebaPath;
-            BOOL bR = [db executeQuery:[NSString stringWithFormat:@"select jieba_dict('%@')", jiebaPath]];
-            if (bR) {
-                
-            }
-            
         } else {
             [sql appendFormat:@"simple_query('%@');", text];
         }
