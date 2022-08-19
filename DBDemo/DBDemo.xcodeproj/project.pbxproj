@@ -7,16 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2102C4AA28ADFC3300FBFA5D /* idf.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C4A528ADFC3200FBFA5D /* idf.utf8 */; };
-		2102C4AB28ADFC3300FBFA5D /* hmm_model.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C4A628ADFC3200FBFA5D /* hmm_model.utf8 */; };
-		2102C4AC28ADFC3300FBFA5D /* jieba.dict.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C4A728ADFC3200FBFA5D /* jieba.dict.utf8 */; };
-		2102C4AD28ADFC3300FBFA5D /* stop_words.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C4A828ADFC3200FBFA5D /* stop_words.utf8 */; };
-		2102C4AE28ADFC3300FBFA5D /* user.dict.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C4A928ADFC3300FBFA5D /* user.dict.utf8 */; };
-		2102C4B328ADFC3E00FBFA5D /* prob_trans.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C4AF28ADFC3E00FBFA5D /* prob_trans.utf8 */; };
-		2102C4B428ADFC3E00FBFA5D /* prob_start.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C4B028ADFC3E00FBFA5D /* prob_start.utf8 */; };
-		2102C4B528ADFC3E00FBFA5D /* char_state_tab.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C4B128ADFC3E00FBFA5D /* char_state_tab.utf8 */; };
-		2102C4B628ADFC3E00FBFA5D /* prob_emit.utf8 in Resources */ = {isa = PBXBuildFile; fileRef = 2102C4B228ADFC3E00FBFA5D /* prob_emit.utf8 */; };
 		2102C4BA28AE7C2D00FBFA5D /* libsimple.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2102C4B928AE7C2D00FBFA5D /* libsimple.a */; };
+		212D284028AF17E9009A6BB7 /* JIEBA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 212D283F28AF17E9009A6BB7 /* JIEBA.bundle */; };
 		215C039128ABCAF600C248D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C039028ABCAF600C248D5 /* AppDelegate.m */; };
 		215C039428ABCAF600C248D5 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C039328ABCAF600C248D5 /* SceneDelegate.m */; };
 		215C039728ABCAF600C248D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C039628ABCAF600C248D5 /* ViewController.m */; };
@@ -51,16 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2102C4A528ADFC3200FBFA5D /* idf.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = idf.utf8; sourceTree = "<group>"; };
-		2102C4A628ADFC3200FBFA5D /* hmm_model.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hmm_model.utf8; sourceTree = "<group>"; };
-		2102C4A728ADFC3200FBFA5D /* jieba.dict.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jieba.dict.utf8; sourceTree = "<group>"; };
-		2102C4A828ADFC3200FBFA5D /* stop_words.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stop_words.utf8; sourceTree = "<group>"; };
-		2102C4A928ADFC3300FBFA5D /* user.dict.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user.dict.utf8; sourceTree = "<group>"; };
-		2102C4AF28ADFC3E00FBFA5D /* prob_trans.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prob_trans.utf8; sourceTree = "<group>"; };
-		2102C4B028ADFC3E00FBFA5D /* prob_start.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prob_start.utf8; sourceTree = "<group>"; };
-		2102C4B128ADFC3E00FBFA5D /* char_state_tab.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = char_state_tab.utf8; sourceTree = "<group>"; };
-		2102C4B228ADFC3E00FBFA5D /* prob_emit.utf8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prob_emit.utf8; sourceTree = "<group>"; };
 		2102C4B928AE7C2D00FBFA5D /* libsimple.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsimple.a; sourceTree = "<group>"; };
+		212D283F28AF17E9009A6BB7 /* JIEBA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JIEBA.bundle; sourceTree = "<group>"; };
 		215C038C28ABCAF600C248D5 /* DBDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DBDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		215C038F28ABCAF600C248D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		215C039028ABCAF600C248D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -120,30 +104,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2102C4A328ADFC0100FBFA5D /* dict */ = {
-			isa = PBXGroup;
-			children = (
-				2102C4A628ADFC3200FBFA5D /* hmm_model.utf8 */,
-				2102C4A528ADFC3200FBFA5D /* idf.utf8 */,
-				2102C4A728ADFC3200FBFA5D /* jieba.dict.utf8 */,
-				2102C4A828ADFC3200FBFA5D /* stop_words.utf8 */,
-				2102C4A928ADFC3300FBFA5D /* user.dict.utf8 */,
-				2102C4A428ADFC0B00FBFA5D /* pos_dict */,
-			);
-			path = dict;
-			sourceTree = "<group>";
-		};
-		2102C4A428ADFC0B00FBFA5D /* pos_dict */ = {
-			isa = PBXGroup;
-			children = (
-				2102C4B128ADFC3E00FBFA5D /* char_state_tab.utf8 */,
-				2102C4B228ADFC3E00FBFA5D /* prob_emit.utf8 */,
-				2102C4B028ADFC3E00FBFA5D /* prob_start.utf8 */,
-				2102C4AF28ADFC3E00FBFA5D /* prob_trans.utf8 */,
-			);
-			path = pos_dict;
-			sourceTree = "<group>";
-		};
 		215C038328ABCAF600C248D5 = {
 			isa = PBXGroup;
 			children = (
@@ -206,9 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				2102C4B928AE7C2D00FBFA5D /* libsimple.a */,
-				2102C4A328ADFC0100FBFA5D /* dict */,
 				215C03C628ABCB8400C248D5 /* FTSService.h */,
 				215C03C728ABCB8400C248D5 /* FTSService.mm */,
+				212D283F28AF17E9009A6BB7 /* JIEBA.bundle */,
 			);
 			path = FTS;
 			sourceTree = "<group>";
@@ -344,18 +304,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2102C4B628ADFC3E00FBFA5D /* prob_emit.utf8 in Resources */,
-				2102C4AA28ADFC3300FBFA5D /* idf.utf8 in Resources */,
-				2102C4B528ADFC3E00FBFA5D /* char_state_tab.utf8 in Resources */,
-				2102C4AC28ADFC3300FBFA5D /* jieba.dict.utf8 in Resources */,
-				2102C4B428ADFC3E00FBFA5D /* prob_start.utf8 in Resources */,
-				2102C4AB28ADFC3300FBFA5D /* hmm_model.utf8 in Resources */,
 				215C039F28ABCAF900C248D5 /* LaunchScreen.storyboard in Resources */,
-				2102C4AE28ADFC3300FBFA5D /* user.dict.utf8 in Resources */,
 				215C039C28ABCAF900C248D5 /* Assets.xcassets in Resources */,
-				2102C4AD28ADFC3300FBFA5D /* stop_words.utf8 in Resources */,
 				215C039A28ABCAF600C248D5 /* Main.storyboard in Resources */,
-				2102C4B328ADFC3E00FBFA5D /* prob_trans.utf8 in Resources */,
+				212D284028AF17E9009A6BB7 /* JIEBA.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,8 +9,8 @@
 #import <FMDB/FMDB.h>
 
 #define kDocPath            [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
-#define kDBPath             [NSString stringWithFormat:@"%@test.db", NSTemporaryDirectory()]
-#define kJiebaPath          [NSString stringWithFormat:@"%@/%@", kDocPath, @"dict"]
+#define kDBPath             [NSString stringWithFormat:@"%@/test.db", kDocPath]
+#define kJiebaPath          [[NSBundle mainBundle] pathForResource:@"JIEBA" ofType:@"bundle"]
 #define kTableName          @"message"
 #define kVirtualTableName   @"virtual_message"
 
@@ -34,9 +34,6 @@
     [_highlightSwitch setOn:NO];
     [_jiebaSwitch setOn:NO];
     
-    // 将jieba dict目录内容写入沙盒
-    [self writeJiebaDataToSandbox];
-    
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     if (![fileManager fileExistsAtPath:kDBPath]) {
@@ -44,7 +41,7 @@
                              contents:nil
                            attributes:nil];
     }
-        
+            
     _queue = [FMDatabaseQueue databaseQueueWithPath:kDBPath];
     
     [_queue inDatabase:^(FMDatabase * _Nonnull db) {
@@ -227,149 +224,6 @@
     text = text ? text : @"";
     
     self.textView.text = [NSString stringWithFormat:@"%@%@\n", text, log];
-}
-
-- (void)writeJiebaDataToSandbox {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    NSString * docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-
-        
-    NSString *dictDir = [NSString stringWithFormat:@"%@/%@", docDir, @"dict"];
-    NSString *pos_dictDir = [NSString stringWithFormat:@"%@/%@", dictDir, @"pos_dict"];
-    
-    BOOL result = NO;
-    if (![fileManager fileExistsAtPath:dictDir]) {
-        result = [fileManager createDirectoryAtPath:dictDir withIntermediateDirectories:YES attributes:nil error:nil];
-        if (result) {
-            
-        }
-    }
-    
-    if (![fileManager fileExistsAtPath:pos_dictDir]) {
-        result = [fileManager createDirectoryAtPath:pos_dictDir withIntermediateDirectories:YES attributes:nil error:nil];
-        if (result) {
-            
-        }
-    }
-    
-    if (![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/hmm_model.utf8", dictDir]]) {
-        NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"hmm_model.utf8" ofType:nil]];
-        
-        NSString *filePath = [NSString stringWithFormat:@"%@/hmm_model.utf8", dictDir];
-        
-        if (![fileManager fileExistsAtPath:filePath]) {
-            result = [fileManager createFileAtPath:filePath contents:data attributes:nil];
-        }
-        
-        if (!result) {
-            NSLog(@"写入数据失败");
-        }
-    }
-    
-    if (![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/idf.utf8", dictDir]]) {
-        NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"idf.utf8" ofType:nil]];
-        
-        NSString *filePath = [NSString stringWithFormat:@"%@/idf.utf8", dictDir];
-        
-        if (![fileManager fileExistsAtPath:filePath]) {
-            result = [fileManager createFileAtPath:filePath contents:data attributes:nil];
-        }
-        if (!result) {
-            NSLog(@"写入数据失败");
-        }
-    }
-    
-    if (![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/jieba.dict.utf8", dictDir]]) {
-        NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"jieba.dict.utf8" ofType:nil]];
-        
-        NSString *filePath = [NSString stringWithFormat:@"%@/jieba.dict.utf8", dictDir];
-        
-        if (![fileManager fileExistsAtPath:filePath]) {
-            result = [fileManager createFileAtPath:filePath contents:data attributes:nil];
-        }
-        if (!result) {
-            NSLog(@"写入数据失败");
-        }
-    }
-    
-    if (![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/stop_words.utf8", dictDir]]) {
-        NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"stop_words.utf8" ofType:nil]];
-        
-        NSString *filePath = [NSString stringWithFormat:@"%@/stop_words.utf8", dictDir];
-        
-        if (![fileManager fileExistsAtPath:filePath]) {
-            result = [fileManager createFileAtPath:filePath contents:data attributes:nil];
-        }
-        if (!result) {
-            NSLog(@"写入数据失败");
-        }
-    }
-    
-    if (![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/user.dict.utf8", dictDir]]) {
-        NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"user.dict.utf8" ofType:nil]];
-        
-        NSString *filePath = [NSString stringWithFormat:@"%@/user.dict.utf8", dictDir];
-        
-        if (![fileManager fileExistsAtPath:filePath]) {
-            result = [fileManager createFileAtPath:filePath contents:data attributes:nil];
-        }
-        if (!result) {
-            NSLog(@"写入数据失败");
-        }
-    }
-    
-    if (![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/char_state_tab.utf8", pos_dictDir]]) {
-        NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"char_state_tab.utf8" ofType:nil]];
-        
-        NSString *filePath = [NSString stringWithFormat:@"%@/char_state_tab.utf8", pos_dictDir];
-        
-        if (![fileManager fileExistsAtPath:filePath]) {
-            result = [fileManager createFileAtPath:filePath contents:data attributes:nil];
-        }
-        if (!result) {
-            NSLog(@"写入数据失败");
-        }
-    }
-    
-    if (![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/prob_emit.utf8", pos_dictDir]]) {
-        NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"prob_emit.utf8" ofType:nil]];
-        
-        NSString *filePath = [NSString stringWithFormat:@"%@/prob_emit.utf8", pos_dictDir];
-        
-        if (![fileManager fileExistsAtPath:filePath]) {
-            result = [fileManager createFileAtPath:filePath contents:data attributes:nil];
-        }
-        if (!result) {
-            NSLog(@"写入数据失败");
-        }
-    }
-    
-    if (![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/prob_start.utf8", pos_dictDir]]) {
-        NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"prob_start.utf8" ofType:nil]];
-        
-        NSString *filePath = [NSString stringWithFormat:@"%@/prob_start.utf8", pos_dictDir];
-        
-        if (![fileManager fileExistsAtPath:filePath]) {
-            result = [fileManager createFileAtPath:filePath contents:data attributes:nil];
-        }
-        if (!result) {
-            NSLog(@"写入数据失败");
-        }
-    }
-    
-    if (![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/prob_trans.utf8", pos_dictDir]]) {
-        NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"prob_trans.utf8" ofType:nil]];
-        
-        NSString *filePath = [NSString stringWithFormat:@"%@/prob_trans.utf8", pos_dictDir];
-        
-        if (![fileManager fileExistsAtPath:filePath]) {
-            result = [fileManager createFileAtPath:filePath contents:data attributes:nil];
-        }
-        if (!result) {
-            NSLog(@"写入数据失败");
-        }
-    }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
