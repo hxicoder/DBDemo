@@ -8,9 +8,9 @@
 #import "ViewController.h"
 #import <FMDB/FMDB.h>
 
-#define kDocPath            [[NSBundle mainBundle] resourcePath]
-#define kDBPath             [NSString stringWithFormat:@"%@test.db", NSTemporaryDirectory()]
-#define kJiebaPath          [NSString stringWithFormat:@"%@/%@", kDocPath, @"dict"]
+#define kDocPath            [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+#define kDBPath             [NSString stringWithFormat:@"%@/test.db", kDocPath]
+#define kJiebaPath          [[NSBundle mainBundle] pathForResource:@"JIEBA" ofType:@"bundle"]
 #define kTableName          @"message"
 #define kVirtualTableName   @"virtual_message"
 
@@ -41,7 +41,7 @@
                              contents:nil
                            attributes:nil];
     }
-        
+            
     _queue = [FMDatabaseQueue databaseQueueWithPath:kDBPath];
     
     [_queue inDatabase:^(FMDatabase * _Nonnull db) {
